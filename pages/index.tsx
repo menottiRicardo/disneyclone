@@ -8,12 +8,7 @@ import { GetStaticProps } from "next";
 import MoviesCollection from "../components/MoviesCollection";
 import ShowsCollection from "../components/ShowsCollection";
 
-const Home: NextPage = ({
-  popularMovies,
-  popularShows,
-  top_ratedMovies,
-  top_ratedShows,
-}: any) => {
+const Home: NextPage = ({ popularMovies,popularShows, top_ratedMovies, top_ratedShows }: any) => {
   console.log("movies", top_ratedMovies);
   return (
     <div>
@@ -25,14 +20,8 @@ const Home: NextPage = ({
       <main className="relative min-h-screen after:bg-home after:bg-center after:bg-cover after:bg-no-repeat after:bg-fixed after:absolute after:inset-0 after:z-[-1]">
         <Slider />
         <Brand />
-        <MoviesCollection
-          movies={popularMovies}
-          title="Popular Movies"
-        />
-        <MoviesCollection
-          movies={top_ratedMovies}
-          title="Top Rated Movies"
-        />
+        <MoviesCollection movies={popularMovies} title="Popular Movies"/>
+        <MoviesCollection movies={top_ratedMovies} title="Top Rated Movies"/>
       </main>
     </div>
   );
@@ -61,26 +50,18 @@ export const getStaticProps: GetStaticProps = async (context) => {
     ),
   ]);
   // console.log('popular', popularShowsRes)
-  let popularMovies: any = [];
-  let popularShows: any = [];
-  let top_ratedMovies: any = [];
-  let top_ratedShows: any = [];
-
   const [
-    popularMoviess,
-    popularShowss,
-    top_ratedMoviess,
-    top_ratedShowss,
+    popularMovies,
+    popularShows,
+    top_ratedMovies,
+    top_ratedShows,
   ] = await Promise.all([
     popularMoviesRes.json(),
     popularShowsRes.json(),
     top_ratedMoviesRes.json(),
     top_ratedShowsRes.json(),
   ]);
-  popularMovies = popularMoviess;
-  popularShows = popularShowss;
-  top_ratedMovies = top_ratedMoviess;
-  top_ratedShows = top_ratedShowss;
+
   return {
     props: {
       popularMovies: popularMovies.results,
