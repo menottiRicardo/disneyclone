@@ -4,19 +4,23 @@ import {
   SearchIcon,
   StarIcon,
 } from "@heroicons/react/solid";
+import Link from "next/link";
 function Header() {
   return (
     <div className="sticky bg-[#040714] top-0 z-[100] flex h-[72px] items-center px-10 md:px-12">
       {/* logo section */}
+      <Link href="/" passHref>
       <h1 className="text-white text-xl">Disney Clone</h1>
+      </Link>
 
       {/* links */}
       <div className="hidden ml-10 md:flex items-center space-x-10">
-        <a href="#" className="header-link group">
-          <HomeIcon className="h-5 w-5" />
-          <span className="span">Home</span>
-        </a>
-
+        <Link href="/">
+          <a href="#" className="header-link group">
+            <HomeIcon className="h-5 w-5" />
+            <span className="span">Home</span>
+          </a>
+        </Link>
         <a href="#" className="header-link group">
           <SearchIcon className="h-5 w-5" />
           <span className="span">Search</span>
@@ -32,12 +36,12 @@ function Header() {
           <span className="span">Originals</span>
         </a>
 
-        <a className="header-link group">
+        <a className="header-link group" href="#movies">
           <img src="/images/movie-icon.svg" alt="" className="h-5" />
           <span className="span">Movies</span>
         </a>
 
-        <a className="header-link group">
+        <a className="header-link group" href="#tv">
           <img src="/images/series-icon.svg" alt="" className="h-5" />
           <span className="span">Series</span>
         </a>

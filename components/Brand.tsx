@@ -1,21 +1,27 @@
 import Image from "next/image";
 function Brand() {
   return (
-    <section className="flex flex-col md:flex-row justify-center items-center mt-10 gap-6 px-8 mx-auto">
+    <section className="grid grid-cols-2 md:flex md:flex-row justify-center items-center mt-10 gap-6 px-8 mx-auto">
       <div className="brand group">
-        <Image src="/images/disnep.png" layout="fill" objectFit="cover" />
+        <Image
+          src="/images/disnep.png"
+          layout="fill"
+          objectFit="cover"
+        />
         <video
           autoPlay
           loop
           playsInline
           className="hidden group-hover:inline rounded-lg object-cover w-full"
           src="/videos/disney.mp4"
-         
-        >
-        </video>
+        ></video>
       </div>
       <div className="brand group">
-        <Image src="/images/pixar.png" layout="fill" objectFit="cover" />
+        <Image
+          src="/images/pixar.png"
+          layout="fill"
+          objectFit="cover"
+        />
         <video
           autoPlay
           loop
@@ -27,7 +33,11 @@ function Brand() {
       </div>
 
       <div className="brand group">
-        <Image src="/images/marvel.png" layout="fill" objectFit="cover" />
+        <Image
+          src="/images/marvel.png"
+          layout="fill"
+          objectFit="cover"
+        />
         <video
           autoPlay
           loop
@@ -39,20 +49,8 @@ function Brand() {
       </div>
 
       <div className="brand group">
-        <Image src="/images/starwars.png" layout="fill" objectFit="cover" />
-        <video
-          autoPlay
-          loop
-          playsInline
-          className="hidden group-hover:inline rounded-lg object-cover w-full"
-        >
-          <source src="/videos/star-wars.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div className="brand group">
         <Image
-          src="/images/national-geographic.png"
+          src="/images/starwars.png"
           layout="fill"
           objectFit="cover"
         />
@@ -62,7 +60,25 @@ function Brand() {
           playsInline
           className="hidden group-hover:inline rounded-lg object-cover w-full"
         >
-          <source src="/videos/national-geographic.mp4" type="video/mp4" />
+          <source src="/videos/star-wars.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className="brand group col-span-2 items-center mx-auto md:col-span-1 sm:mx-0">
+        <Image
+          src="/images/national-geographic.png"
+          layout="fill"
+          objectFit="cover"
+        />
+        <video
+          autoPlay
+          loop
+          playsInline
+          className="hidden group-hover:inline rounded-lg object-cover w-full h-full"
+        >
+          <source
+            src="/videos/national-geographic.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
     </section>

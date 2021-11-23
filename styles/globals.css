@@ -20,6 +20,26 @@
     max-width: 98.75rem;
     @apply w-11/12 mx-auto;
   }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 80vh;
+    background: #040714;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #55546C;
+    border-radius: 80vh;
+    border: 1px solid #524F4F;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #33324F;
+  }
 }
 
 @layer components {
@@ -32,6 +52,6 @@
   }
 
   .brand {
-    @apply flex relative w-52 h-32 sm:w-64 sm:h-36 2xl:w-80 2xl:h-48 border-[3px] border-[#f9f9f9] border-opacity-10 rounded-lg cursor-pointer shadow-xl overflow-hidden  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 bg-coolGray-800;
+    @apply flex relative w-40 h-32 sm:w-64 sm:h-36 2xl:w-80 2xl:h-48 border-[3px] border-[#f9f9f9] border-opacity-10 rounded-lg cursor-pointer shadow-xl overflow-hidden  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 bg-coolGray-800;
   }
 }

@@ -9,7 +9,7 @@ import MoviesCollection from "../components/MoviesCollection";
 import ShowsCollection from "../components/ShowsCollection";
 
 const Home: NextPage = ({ popularMovies,popularShows, top_ratedMovies, top_ratedShows }: any) => {
-  console.log("movies", top_ratedMovies);
+  console.log("movies", popularShows);
   return (
     <div>
       <Head>
@@ -22,6 +22,8 @@ const Home: NextPage = ({ popularMovies,popularShows, top_ratedMovies, top_rated
         <Brand />
         <MoviesCollection movies={popularMovies} title="Popular Movies"/>
         <MoviesCollection movies={top_ratedMovies} title="Top Rated Movies"/>
+        <ShowsCollection shows={popularShows} title="Popular Shows" />
+        <ShowsCollection shows={top_ratedShows} title="Top Rated Shows" />
       </main>
     </div>
   );
@@ -29,7 +31,7 @@ const Home: NextPage = ({ popularMovies,popularShows, top_ratedMovies, top_rated
 
 export default Home;
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const [
     popularMoviesRes,
     popularShowsRes,
