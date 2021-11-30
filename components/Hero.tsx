@@ -29,7 +29,7 @@ function Hero() {
           <p className="text-xs text-center ">
             This site is Incremantally Statiticly Generetaring with NextJs ISG.
             The clone shows popular movies and shows from multiple providers using TMBD API;
-            even though you can't watch movies, you are able to check the trailer from movies
+            even though you cant watch movies, you are able to check the trailer from movies
             You can create an account or use the username: ricardo and the password:Ricardo
           </p>
           <Image
